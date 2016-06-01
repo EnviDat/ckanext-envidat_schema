@@ -1,0 +1,207 @@
+{
+  "scheming_version": 1,
+  "dataset_type": "dataset",
+  "about": "The default CKAN dataset schema plus additional DataCite fields",
+  "about_url": "http://github.com/ckan/ckanext-scheming",
+  "dataset_fields": [
+    {
+      "field_name": "title",
+      "label": "Title",
+      "preset": "title",
+      "form_placeholder": "eg. A descriptive title"
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "preset": "dataset_slug",
+      "form_placeholder": "eg. my-dataset"
+    },
+    {
+      "field_name": "doi",
+      "label": "DOI",
+      "form_placeholder": "eg. 10.12345/678"
+    },
+    {
+      "field_name": "publisher",
+      "label": "Publisher",
+      "form_placeholder": "eg. Institution or Journal"
+    },
+    {
+      "field_name": "publication_year",
+      "label": "Publication Year",
+      "form_placeholder": "eg. 2015"
+    },
+    {
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Some useful notes about the data"
+    },
+    {
+      "field_name": "tag_string",
+      "label": "Tags",
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": "eg. economy, mental health, government"
+    },
+    {
+      "field_name": "contributors",
+      "label": "Contributor"
+    },
+    {
+      "field_name": "license_id",
+      "label": "License",
+      "form_snippet": "license.html",
+      "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
+    },
+    {
+      "field_name": "owner_org",
+      "label": "Organization",
+      "preset": "dataset_organization"
+    },
+    {
+      "field_name": "url",
+      "label": "Source",
+      "form_placeholder": "http://example.com/dataset.json",
+      "display_property": "foaf:homepage",
+      "display_snippet": "link.html"
+    },
+    {
+      "field_name": "version",
+      "label": "Version",
+      "validators": "ignore_missing unicode package_version_validator",
+      "form_placeholder": "1.0"
+    },
+    {
+      "field_name": "infos",
+      "preset": "repeating_text",
+      "label": "Info",
+      "form_blanks": 3
+    },
+    {
+      "field_name": "author",
+      "label": "Author",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:creator"
+    },
+    {
+      "field_name": "author_email",
+      "label": "Author Email",
+      "form_placeholder": "joe@example.com",
+      "display_property": "dc:creator",
+      "display_snippet": "email.html",
+      "display_email_name_field": "author"
+    },
+    {
+      "field_name": "maintainer",
+      "label": "Maintainer",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:contributor"
+    },
+    {
+      "field_name": "maintainer_email",
+      "label": "Maintainer Email",
+      "form_placeholder": "joe@example.com",
+      "display_property": "dc:contributor",
+      "display_snippet": "email.html",
+      "display_email_name_field": "maintainer"
+    },
+    {
+      "field_name": "resource-type",
+      "label": "Type",
+      "form_placeholder": "Dataset"
+    },
+    {
+      "field_name": "resource-type-general",
+      "label": "General Type",
+      "preset": "select",
+      "choices": [
+	      {
+	        "value": "audiovisual",
+	        "label": "Audiovisual"
+	      },
+	      {
+	        "value": "collection",
+	        "label": "Collection"
+	      },
+	      {
+	        "value": "dataset",
+	        "label": "Dataset"
+	      },
+	      {
+	        "value": "event",
+	        "label": "Event"
+	      },
+	      {
+	        "value": "image",
+	        "label": "Image"
+	      },
+	      {
+	        "value": "interactive-resource",
+	        "label": "Interactive Resource"
+	      },
+	      {
+	        "value": "model",
+	        "label": "Model"
+	      },
+	      {
+	        "value": "physical-object",
+	        "label": "Physical Object"
+	      },
+	      {
+	        "value": "service",
+	        "label": "Service"
+	      },
+	      {
+	        "value": "software",
+	        "label": "Software"
+	      },
+	      {
+	        "value": "sound",
+	        "label": "Sound"
+	      },
+	      {
+	        "value": "text",
+	        "label": "Text"
+	      },
+	      {
+	        "value": "workflow",
+	        "label": "Workflow"
+	      },
+	      {
+	        "value": "other",
+	        "label": "Other"
+	      }
+      ]
+    },
+    {
+      "field_name": "spatial",
+      "label": "Spatial Extent",
+      "modal_text": "spatial_help",
+      "form_placeholder": "{\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}",
+      "preset": "spatial"
+    }
+  ],
+  "resource_fields": [
+    {
+      "field_name": "url",
+      "label": "URL",
+      "preset": "resource_url_upload"
+    },
+    {
+      "field_name": "name",
+      "label": "Name",
+      "form_placeholder": "eg. January 2011 Gold Prices"
+    },
+    {
+      "field_name": "description",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "Some useful notes about the data"
+    },
+    {
+      "field_name": "format",
+      "label": "Format",
+      "preset": "resource_format_autocomplete"
+    }
+  ]
+}
