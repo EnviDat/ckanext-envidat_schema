@@ -73,9 +73,9 @@
     },
     {
       "field_name": "infos",
-      "preset": "repeating_text",
+      "preset": "envidat_schema_repeating_text",
       "label": "Info",
-      "form_blanks": 3
+      "form_blanks": 1
     },
     {
       "field_name": "author",
@@ -174,8 +174,8 @@
       ]
     },
     {
-      "field_name": "spatial",
-      "label": "Spatial Extent",
+      "field_name": "spatial_info",
+      "label": "Spatial Info",
       "modal_text": "spatial_help",
       "form_placeholder": "{\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}",
       "preset": "spatial"
@@ -205,3 +205,4 @@
     }
   ]
 }
+

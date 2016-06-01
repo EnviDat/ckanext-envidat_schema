@@ -1,0 +1,30 @@
+{% import 'macros/form.html' as form %}
+{% resource 'envidat_schema/lcrnz-repeating.js' %}
+
+{% set modal_text=field.modal_text if 'modal_text' in field else none %} 
+{% set placeholder=h.scheming_language_text(field.form_placeholder) %}
+{%- set values = h.repeating_get_values(field.field_name,
+field.get('form_blanks', 1), data) %}
+<div data-module="lcrnz-repeating">
+  {% set attrs={"class": "medinput"} %}
+  {% set type = "text" %}  
+  {%- snippet 'scheming/form_snippets/help_text_short.html', field=field -%}
+  {%- for value in values -%}
+    {% set id='field-' + field.field_name + '-' ~ loop.index %}
+    {% set name=field.field_name + '-' ~ loop.index %}
+    <div class="control-repeating"> 
+      {%- call form.input_block(
+	for= 'field-' + field.field_name + '-' ~ loop.index, 
+	label=h.scheming_language_text(field.label) + ' ' ~ loop.index,
+	error=errors[field.field_name],
+	classes=['control-medium'],
+	extra_html="",
+	is_required=h.scheming_field_required(field)) -%}
+	<input id="{{ id or name }}" type="{{ type }}" name="{{ name }}"
+	 value="{{ value | empty_and_escape }}" placeholder="{{ placeholder }}"
+	       {{ form.attributes(attrs) }} class="medinput"/>
+       {% endcall %}
+     </div>
+  {%- endfor -%}
+</div>
+

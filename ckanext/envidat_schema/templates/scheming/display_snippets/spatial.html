@@ -1,0 +1,9 @@
+{% set spatial_dict = data[field.field_name] %}
+{% if spatial_dict is not none %}
+    {{ spatial_dict['type'] }} {{ spatial_dict['coordinates'] }}
+{% else %}
+    None
+{% endif %}
+{# {% for key, value in spatial_dict.iteritems() %} #}
+{#    {{ key }}: {{ value }} #} 
+{# {% endfor %} #}
