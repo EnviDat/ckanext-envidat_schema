@@ -79,17 +79,18 @@
     },
     {
       "field_name": "author",
-      "label": "Author",
-      "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:creator"
-    },
-    {
-      "field_name": "author_email",
-      "label": "Author Email",
-      "form_placeholder": "joe@example.com",
-      "display_property": "dc:creator",
-      "display_snippet": "email.html",
-      "display_email_name_field": "author"
+      "label": "Author Information",
+      "preset": "composite",
+      "subfields": [
+          {
+          "field_name": "name",
+          "label": "Name"
+          },
+          {
+          "field_name": "email",
+          "label": "Email"
+          }
+      ]
     },
     {
       "field_name": "maintainer",
@@ -172,13 +173,6 @@
 	        "label": "Other"
 	      }
       ]
-    },
-    {
-      "field_name": "spatial_info",
-      "label": "Spatial Info",
-      "modal_text": "spatial_help",
-      "form_placeholder": "{\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}",
-      "preset": "spatial"
     }
   ],
   "resource_fields": [
@@ -202,7 +196,13 @@
       "field_name": "format",
       "label": "Format",
       "preset": "resource_format_autocomplete"
+    },
+    {
+      "field_name": "doi",
+      "label": "DOI",
+      "form_placeholder": "eg. 10.12345/678"
     }
+
   ]
 }
 

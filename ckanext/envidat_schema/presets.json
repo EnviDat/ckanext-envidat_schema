@@ -4,15 +4,6 @@
   "about_url": "http://github.com/espona/ckanext-envidat_schema",
   "presets": [
     {
-      "preset_name": "spatial",
-      "values": {
-        "form_snippet": "spatial.html",
-        "display_snippet": "spatial.html",
-        "validators":  "envidat_schema_spatial",
-        "output_validators": "envidat_schema_spatial_output"
-      }
-    },
-    {
       "preset_name": "envidat_schema_repeating_text",
       "values": {
 	"form_snippet": "envidat_schema_repeating_text.html",
