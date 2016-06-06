@@ -22,14 +22,21 @@
       "form_placeholder": "eg. 10.12345/678"
     },
     {
-      "field_name": "publisher",
-      "label": "Publisher",
-      "form_placeholder": "eg. Institution or Journal"
-    },
-    {
-      "field_name": "publication_year",
-      "label": "Publication Year",
-      "form_placeholder": "eg. 2015"
+      "field_name": "publication", 
+      "label": "Publication",
+      "preset": "composite",
+      "subfields": [ 
+         {
+           "field_name": "publisher",
+           "label": "Publisher",
+           "form_placeholder": "eg. Institution or Journal"
+         },
+         {
+           "field_name": "publication_year",
+           "label": "Publication Year",
+           "form_placeholder": "eg. 2015"
+         }
+       ]
     },
     {
       "field_name": "notes",
@@ -72,39 +79,43 @@
       "form_placeholder": "1.0"
     },
     {
-      "field_name": "infos",
-      "preset": "envidat_schema_repeating_text",
-      "label": "Info",
-      "form_blanks": 1
-    },
-    {
       "field_name": "author",
-      "label": "Author Information",
-      "preset": "composite",
+      "label": "Authors",
+      "preset": "composite_repeating",
+      "form_blanks": 1,
       "subfields": [
           {
-          "field_name": "name",
-          "label": "Name"
+            "field_name": "name",
+            "label": "Name",
+            "form_placeholder":"eg. John Smith"
           },
           {
-          "field_name": "email",
-          "label": "Email"
+            "field_name": "email",
+            "label": "Email",
+            "form_placeholder":"eg. john@server.com"
           }
       ]
     },
     {
       "field_name": "maintainer",
       "label": "Maintainer",
-      "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:contributor"
-    },
-    {
-      "field_name": "maintainer_email",
-      "label": "Maintainer Email",
-      "form_placeholder": "joe@example.com",
-      "display_property": "dc:contributor",
-      "display_snippet": "email.html",
-      "display_email_name_field": "maintainer"
+      "preset": "composite",
+      "subfields":[
+          {
+            "field_name": "name",
+            "label": "Name",
+            "form_placeholder": "Joe Bloggs",
+            "display_property": "dc:contributor"
+          },
+          {
+            "field_name": "email",
+            "label": "Email",
+            "form_placeholder": "joe@example.com",
+            "display_property": "dc:contributor",
+            "display_snippet": "email.html",
+            "display_email_name_field": "maintainer"
+          }
+      ]
     },
     {
       "field_name": "resource-type",
