@@ -180,12 +180,12 @@
       "form_placeholder": "1.0"
     },
     {
-      "field_name": "resource-type",
+      "field_name": "resource_type",
       "label": "Type",
       "form_placeholder": "Dataset"
     },
     {
-      "field_name": "resource-type-general",
+      "field_name": "resource_type_general",
       "label": "General Type",
       "preset": "select",
       "choices": [
@@ -210,7 +210,7 @@
                 "label": "Image"
               },
               {
-                "value": "interactive-resource",
+                "value": "interactive_resource",
                 "label": "Interactive Resource"
               },
               {
@@ -218,7 +218,7 @@
                 "label": "Model"
               },
               {
-                "value": "physical-object",
+                "value": "physical_object",
                 "label": "Physical Object"
               },
               {
@@ -274,7 +274,7 @@
           },
           {
             "field_name": "identifier_scheme",
-            "label": "ID Scheme",
+            "label": "Scheme",
             "preset": "select",
             "choices": [
               {
