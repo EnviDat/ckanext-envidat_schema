@@ -1,3 +1,4 @@
+
 {
   "scheming_version": 1,
   "dataset_type": "dataset",
@@ -22,10 +23,126 @@
       "form_placeholder": "eg. 10.12345/678"
     },
     {
-      "field_name": "publication", 
+      "field_name": "author",
+      "label": "Authors",
+      "preset": "composite_repeating",
+      "form_blanks": 1,
+      "subfields": [
+          {
+            "field_name": "name",
+            "label": "Name",
+            "form_placeholder":"eg. John Smith"
+          },
+          {
+            "field_name": "affiliation",
+            "label": "Affiliation",
+            "form_placeholder":"eg. WSL"
+          },
+          {
+            "field_name": "email",
+            "label": "Email",
+            "form_placeholder":"eg. john@wsl.ch"
+          },
+          {
+            "field_name": "identifier",
+            "label": "Identifier",
+            "form_placeholder":"eg. 0000-0003-0166-248X"
+          },
+          {
+            "field_name": "identifier_scheme",
+            "label": "Scheme",
+            "preset": "select",
+            "choices": [
+              {
+                "value": "orcid",
+                "label": "ORCID"
+              },
+              {
+                "value": "isni",
+                "label": "ISNI"
+              },
+              {
+                "value": "rid",
+                "label": "ResearcherID"
+              },
+              {
+                "value": "rgate",
+                "label": "ResearchGate"
+              }
+           ]
+         }
+      ]
+    },
+    {
+      "field_name": "owner_org",
+      "label": "Organization",
+      "preset": "dataset_organization"
+    },
+    {
+      "field_name": "subtitle",
+      "label": "Subtitles",
+      "preset": "composite_repeating",
+      "form_blanks": 1,
+      "subfields": [
+          {
+            "field_name": "subtitle",
+            "label": "Subtitle",
+            "form_placeholder":"eg. A secondary title"
+          },
+          {
+            "field_name": "type",
+            "label": "Type",
+            "preset": "select",
+            "choices": [
+              {
+                "value": "alternative_title",
+                "label": "Alternative Title"
+              },
+              {
+                "value": "subtitle",
+                "label": "Subtitle"
+              },
+              {
+                "value": "translated_title",
+                "label": "Translated Title"
+              }
+
+           ]
+         },
+         {
+            "field_name": "language",
+            "label": "Language",
+            "preset": "select",
+            "choices": [
+              {
+                "value": "en",
+                "label": "English"
+              },
+              {
+                "value": "de",
+                "label": "German"
+              },
+              {
+                "value": "fr",
+                "label": "French"
+              },
+              {
+                "value": "it",
+                "label": "Italian"
+              },
+              {
+                "value": "ro",
+                "label": "Romansh"
+              }
+           ]
+         }
+      ]
+    },
+    {
+      "field_name": "publication",
       "label": "Publication",
       "preset": "composite",
-      "subfields": [ 
+      "subfields": [
          {
            "field_name": "publisher",
            "label": "Publisher",
@@ -33,7 +150,7 @@
          },
          {
            "field_name": "publication_year",
-           "label": "Publication Year",
+           "label": "Year",
            "form_placeholder": "eg. 2015"
          }
        ]
@@ -46,13 +163,9 @@
     },
     {
       "field_name": "tag_string",
-      "label": "Tags",
+      "label": "Subjects",
       "preset": "tag_string_autocomplete",
-      "form_placeholder": "eg. economy, mental health, government"
-    },
-    {
-      "field_name": "contributors",
-      "label": "Contributor"
+      "form_placeholder": "eg. forest, ice temperature, water"
     },
     {
       "field_name": "license_id",
@@ -61,61 +174,10 @@
       "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
     },
     {
-      "field_name": "owner_org",
-      "label": "Organization",
-      "preset": "dataset_organization"
-    },
-    {
-      "field_name": "url",
-      "label": "Source",
-      "form_placeholder": "http://example.com/dataset.json",
-      "display_property": "foaf:homepage",
-      "display_snippet": "link.html"
-    },
-    {
       "field_name": "version",
       "label": "Version",
       "validators": "ignore_missing unicode package_version_validator",
       "form_placeholder": "1.0"
-    },
-    {
-      "field_name": "author",
-      "label": "Authors",
-      "preset": "composite_repeating",
-      "form_blanks": 1,
-      "subfields": [
-          {
-            "field_name": "name",
-            "label": "Name",
-            "form_placeholder":"eg. John Smith"
-          },
-          {
-            "field_name": "email",
-            "label": "Email",
-            "form_placeholder":"eg. john@server.com"
-          }
-      ]
-    },
-    {
-      "field_name": "maintainer",
-      "label": "Maintainer",
-      "preset": "composite",
-      "subfields":[
-          {
-            "field_name": "name",
-            "label": "Name",
-            "form_placeholder": "Joe Bloggs",
-            "display_property": "dc:contributor"
-          },
-          {
-            "field_name": "email",
-            "label": "Email",
-            "form_placeholder": "joe@example.com",
-            "display_property": "dc:contributor",
-            "display_snippet": "email.html",
-            "display_email_name_field": "maintainer"
-          }
-      ]
     },
     {
       "field_name": "resource-type",
@@ -127,62 +189,112 @@
       "label": "General Type",
       "preset": "select",
       "choices": [
-	      {
-	        "value": "audiovisual",
-	        "label": "Audiovisual"
-	      },
-	      {
-	        "value": "collection",
-	        "label": "Collection"
-	      },
-	      {
-	        "value": "dataset",
-	        "label": "Dataset"
-	      },
-	      {
-	        "value": "event",
-	        "label": "Event"
-	      },
-	      {
-	        "value": "image",
-	        "label": "Image"
-	      },
-	      {
-	        "value": "interactive-resource",
-	        "label": "Interactive Resource"
-	      },
-	      {
-	        "value": "model",
-	        "label": "Model"
-	      },
-	      {
-	        "value": "physical-object",
-	        "label": "Physical Object"
-	      },
-	      {
-	        "value": "service",
-	        "label": "Service"
-	      },
-	      {
-	        "value": "software",
-	        "label": "Software"
-	      },
-	      {
-	        "value": "sound",
-	        "label": "Sound"
-	      },
-	      {
-	        "value": "text",
-	        "label": "Text"
-	      },
-	      {
-	        "value": "workflow",
-	        "label": "Workflow"
-	      },
-	      {
-	        "value": "other",
-	        "label": "Other"
-	      }
+              {
+                "value": "audiovisual",
+                "label": "Audiovisual"
+              },
+              {
+                "value": "collection",
+                "label": "Collection"
+              },
+              {
+                "value": "dataset",
+                "label": "Dataset"
+              },
+              {
+                "value": "event",
+                "label": "Event"
+              },
+              {
+                "value": "image",
+                "label": "Image"
+              },
+              {
+                "value": "interactive-resource",
+                "label": "Interactive Resource"
+              },
+              {
+                "value": "model",
+                "label": "Model"
+              },
+              {
+                "value": "physical-object",
+                "label": "Physical Object"
+              },
+              {
+                "value": "service",
+                "label": "Service"
+              },
+              {
+                "value": "software",
+                "label": "Software"
+              },
+              {
+                "value": "sound",
+                "label": "Sound"
+              },
+              {
+                "value": "text",
+                "label": "Text"
+              },
+              {
+                "value": "workflow",
+                "label": "Workflow"
+              },
+              {
+                "value": "other",
+                "label": "Other"
+              }
+         ]
+    },
+    {
+      "field_name": "maintainer",
+      "label": "Contact",
+      "preset": "composite",
+      "subfields":[
+          {
+            "field_name": "name",
+            "label": "Name",
+            "form_placeholder": "Joe Bloggs"
+          },
+          {
+            "field_name": "affiliation",
+            "label": "Affiliation",
+            "form_placeholder":"eg. WSL"
+          },
+          {
+            "field_name": "email",
+            "label": "Email",
+            "form_placeholder":"eg. john@wsl.ch"
+          },
+          {
+            "field_name": "identifier",
+            "label": "Identifier",
+            "form_placeholder":"eg. 0000-0003-0166-248X"
+          },
+          {
+            "field_name": "identifier_scheme",
+            "label": "ID Scheme",
+            "preset": "select",
+            "choices": [
+              {
+                "value": "orcid",
+                "label": "ORCID"
+              },
+              {
+                "value": "isni",
+                "label": "ISNI"
+              },
+              {
+                "value": "rid",
+                "label": "ResearcherID"
+              },
+              {
+                "value": "rgate",
+                "label": "ResearchGate"
+              }
+           ]
+         }
       ]
     }
   ],
