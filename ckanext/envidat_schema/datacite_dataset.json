@@ -20,28 +20,39 @@
     {
       "field_name": "doi",
       "label": "DOI",
-      "form_placeholder": "eg. 10.12345/678"
+      "form_placeholder": "eg. 10.12345/678",
+      "help_text": "For a new DOI contact the admin",
+      "help_inline": true
     },
     {
       "field_name": "author",
       "label": "Authors",
       "preset": "composite_repeating",
       "form_blanks": 1,
+      "help_text": "Authors of the dataset",
+      "help_inline": false,
+      "required": true,
       "subfields": [
           {
             "field_name": "name",
             "label": "Name",
-            "form_placeholder":"eg. John Smith"
+            "form_placeholder":"eg. John Smith",
+            "help_text": "Full first name and family name",
+            "help_inline": false,
+            "required": true
           },
           {
             "field_name": "affiliation",
             "label": "Affiliation",
-            "form_placeholder":"eg. WSL"
+            "form_placeholder":"eg. WSL",
+            "required": true
           },
           {
             "field_name": "email",
             "label": "Email",
-            "form_placeholder":"eg. john@wsl.ch"
+            "form_placeholder":"eg. john@wsl.ch",
+            "help_text": "Contact e-mail for this author",
+            "help_inline": true
           },
           {
             "field_name": "identifier",
@@ -87,7 +98,9 @@
           {
             "field_name": "subtitle",
             "label": "Subtitle",
-            "form_placeholder":"eg. A secondary title"
+            "form_placeholder":"eg. A secondary title",
+            "help_text": "A Secondary title for this dataset",
+            "help_inline": false
           },
           {
             "field_name": "type",
@@ -142,6 +155,9 @@
       "field_name": "publication",
       "label": "Publication",
       "preset": "composite",
+      "help_text": "Publication of the dataset",
+      "help_inline": true,
+      "required": true,
       "subfields": [
          {
            "field_name": "publisher",
@@ -151,6 +167,7 @@
          {
            "field_name": "publication_year",
            "label": "Year",
+           "required": true,
            "form_placeholder": "eg. 2015"
          }
        ]
@@ -255,6 +272,7 @@
           {
             "field_name": "name",
             "label": "Name",
+            "required": true,
             "form_placeholder": "Joe Bloggs"
           },
           {
