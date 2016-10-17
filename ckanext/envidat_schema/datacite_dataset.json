@@ -265,6 +265,40 @@
          ]
     },
     {
+      "field_name": "language",
+      "label": "Language",
+      "preset": "select",
+      "choices": [
+              {
+                "value": "en",
+                "label": "English"
+              },
+              {
+                "value": "de",
+                "label": "German"
+              },
+              {
+                "value": "fr",
+                "label": "French"
+              },
+              {
+                "value": "it",
+                "label": "Italian"
+              },
+              {
+                "value": "ro",
+                "label": "Romansh"
+              }
+         ]
+    },
+    {
+      "field_name": "spatial_info",
+      "label": "Spatial Info",
+      "form_placeholder": "eg. Switzerland, 45.81802 5.95587,...",
+      "help_text": "In development",
+      "help_inline": true
+    },
+    {
       "field_name": "maintainer",
       "label": "Contact",
       "preset": "composite",
