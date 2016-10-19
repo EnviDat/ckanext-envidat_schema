@@ -348,6 +348,29 @@
            ]
          }
       ]
+    },
+   {
+      "field_name": "restricted",
+      "label": "Restriction of Resources",
+      "preset": "select",
+      "choices": [
+              {
+                "value": "public",
+                "label": "Public"
+              },
+              {
+                "value": "registered",
+                "label": "Registered Users"
+              },
+              {
+                "value": "any_organization",
+                "label": "Any Organization Members (Trusted Users)"
+              },
+              {
+                "value": "same_organization",
+                "label": "Same Organization Members"
+              }
+         ]
     }
   ],
   "resource_fields": [

@@ -37,8 +37,9 @@
     },
     {
       "field_name": "image_url",
+      "form_snippet": "hierarchy_image_url.html",
       "display_snippet": null,
-      "label": "Image URL",
+      "label": "Image",
       "form_placeholder": "http://example.com/my-image.jpg"
     },
 
