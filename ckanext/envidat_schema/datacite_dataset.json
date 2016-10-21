@@ -299,6 +299,15 @@
       "help_inline": true
     },
     {
+      "field_name": "spatial",
+      "default_value": "{}",
+      "display_snippet": null,
+      "modal_text": "spatial_help",
+      "required": false,
+      "label": "Spatial Extent",
+      "form_placeholder": "{\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}"
+    },
+    {
       "field_name": "maintainer",
       "label": "Contact",
       "preset": "composite",
