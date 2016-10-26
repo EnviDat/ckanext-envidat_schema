@@ -168,7 +168,8 @@
            "field_name": "publication_year",
            "label": "Year",
            "required": true,
-           "form_placeholder": "eg. 2015"
+           "form_attrs": { "size":5, "maxlength":4 },
+           "form_placeholder": "YYYY"
          }
        ]
     },
@@ -183,6 +184,67 @@
       "label": "Subjects",
       "preset": "tag_string_autocomplete",
       "form_placeholder": "eg. forest, ice temperature, water"
+    },
+    {
+      "field_name": "date",
+      "label": "Dates",
+      "preset": "composite_repeating",
+      "form_blanks": 1,
+      "subfields": [
+         {
+           "field_name": "date_type",
+           "label": "Type",
+           "preset": "select",
+           "choices": [
+             {
+               "value": "accepted",
+               "label": "Accepted"
+             },
+             {
+               "value": "available",
+               "label": "Available"
+             },
+             {
+               "value": "copyrighted",
+               "label": "Copyrighted"
+             },
+             {
+               "value": "collected",
+               "label": "Collected"
+             },
+             {
+               "value": "created",
+               "label": "Created"
+             },
+             {
+               "value": "issued",
+               "label": "Issued"
+             },
+             {
+               "value": "submitted",
+               "label": "Submitted"
+             },
+             {
+               "value": "updated",
+               "label": "Updated"
+             },
+             {
+               "value": "valid",
+               "label": "Valid"
+             }
+           ]
+         },
+         {
+           "field_name": "date",
+           "label": "Date",
+           "preset": "date",
+           "form_placeholder": "yyyy-mm-dd",
+           "form_attrs": { "size":12, "maxlength":10 },
+           "required": true,
+           "help_text": "Pick a date",
+           "help_inline": true
+          }
+      ]
     },
     {
       "field_name": "license_id",
@@ -293,9 +355,9 @@
     },
     {
       "field_name": "spatial_info",
-      "label": "Spatial Info",
+      "label": "Location",
       "form_placeholder": "eg. Switzerland, 45.81802 5.95587,...",
-      "help_text": "In development",
+      "help_text": "Free text spatial information",
       "help_inline": true
     },
     {
@@ -305,6 +367,8 @@
       "modal_text": "spatial_help",
       "required": false,
       "label": "Spatial Extent",
+      "help_text": "GeoJSON format required",
+      "help_inline": true,
       "form_placeholder": "{\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}"
     },
     {
@@ -409,7 +473,6 @@
       "label": "DOI",
       "form_placeholder": "eg. 10.12345/678"
     }
-
   ]
 }
 
