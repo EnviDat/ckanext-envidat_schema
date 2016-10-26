@@ -243,6 +243,14 @@
            "required": true,
            "help_text": "Pick a date",
            "help_inline": true
+          },
+          {
+           "field_name": "end_date",
+           "label": "End Date",
+           "preset": "date",
+           "form_placeholder": "yyyy-mm-dd",
+           "form_attrs": { "size":12, "maxlength":10 },
+           "required": false
           }
       ]
     },
