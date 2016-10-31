@@ -1,0 +1,11 @@
+{% ckan_extends %}
+
+{% block package_description %}
+  {{ super() }}
+  {% set citation =  h.envidat_schema_get_citation(c.pkg_dict) %}
+  {% if citation %}
+    <blockquote>
+    <p> <i> {{ h.envidat_schema_get_citation(c.pkg_dict) }} </i></p>
+    </blockquote>
+  {% endif %}
+{% endblock %}
