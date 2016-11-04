@@ -49,7 +49,7 @@ def _get_from_json_dict (text, field):
     try:
         json_dict = json.loads(text)
         value = json_dict.get(field, "")
-    except e:
+    except:
         return ""
     return _safe_str(value).strip()
 
@@ -63,7 +63,7 @@ def _get_from_json_dict_list (text, field, sep='; '):
             value = _safe_str(item.get(field, "")).strip()
             if value:
                 value_list += [ value ]
-    except e:
+    except:
         return ""
     return (sep.join(value_list))
 
