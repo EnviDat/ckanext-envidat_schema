@@ -118,6 +118,10 @@
               {
                 "value": "translated_title",
                 "label": "Translated Title"
+              },
+              {
+                "value": "other",
+                "label": "Other"
               }
 
            ]
