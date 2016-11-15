@@ -9,7 +9,4 @@
     <p><i> {{ h.envidat_schema_get_citation(c.pkg_dict) }} </i></p>
     </blockquote>
   {% endif %}
-
-   <a href="/dataset/{{c.pkg_dict.get('name')}}/export/datacite.xml" class="btn"><i class="icon-file-text"></i>{{ _('Get DataCite XML')}}</a>
-
 {% endblock %}
