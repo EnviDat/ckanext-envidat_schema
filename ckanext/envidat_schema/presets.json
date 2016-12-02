@@ -3,5 +3,13 @@
   "about": "these are the additional Envidat datacite based field presets",
   "about_url": "http://github.com/espona/ckanext-envidat_schema",
   "presets": [
+    {
+      "preset_name": "envidat_select",
+      "values": {
+        "form_snippet": "envidat_select.html",
+        "display_snippet": "select.html",
+        "validators": "scheming_required scheming_choices"
+      }
+    }
   ]
 }

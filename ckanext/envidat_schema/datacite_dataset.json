@@ -433,29 +433,6 @@
            ]
          }
       ]
-    },
-   {
-      "field_name": "restricted",
-      "label": "Restriction of Resources",
-      "preset": "select",
-      "choices": [
-              {
-                "value": "public",
-                "label": "Public"
-              },
-              {
-                "value": "registered",
-                "label": "Registered Users"
-              },
-              {
-                "value": "any_organization",
-                "label": "Any Organization Members (Trusted Users)"
-              },
-              {
-                "value": "same_organization",
-                "label": "Same Organization Members"
-              }
-         ]
     }
   ],
   "resource_fields": [
@@ -484,6 +461,30 @@
       "field_name": "doi",
       "label": "DOI",
       "form_placeholder": "eg. 10.12345/678"
+    },
+   {
+      "field_name": "restricted",
+      "label": "Access",
+      "preset": "envidat_select",
+      "form_include_blank_choice": false,
+      "choices": [
+              {
+                "value": "public",
+                "label": "Public"
+              },
+              {
+                "value": "registered",
+                "label": "Registered Users"
+              },
+              {
+                "value": "any_organization",
+                "label": "Any Organization Members (Trusted Users)"
+              },
+              {
+                "value": "same_organization",
+                "label": "Same Organization Members"
+              }
+         ]
     }
   ]
 }
