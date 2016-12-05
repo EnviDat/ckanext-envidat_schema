@@ -462,12 +462,19 @@
       "label": "DOI",
       "form_placeholder": "eg. 10.12345/678"
     },
-   {
+    {
       "field_name": "restricted",
-      "label": "Access",
-      "preset": "envidat_select",
-      "form_include_blank_choice": false,
-      "choices": [
+      "label": "Access Restriction",
+      "preset": "composite",
+      "subfields":
+        [
+          {
+            "field_name": "level",
+            "label": "Level",
+            "preset": "select",
+            "form_include_blank_choice": false,
+            "required": true,
+            "choices": [
               {
                 "value": "public",
                 "label": "Public"
@@ -484,8 +491,16 @@
                 "value": "same_organization",
                 "label": "Same Organization Members"
               }
-         ]
-    }
+           ]
+         },
+         {
+           "field_name": "allowed_users",
+           "label": "Allowed Users",
+           "preset": "tag_string_autocomplete",
+           "data-module-source":"/api/2/util/user/autocomplete?q=?"
+         }
+       ]
+     }
   ]
 }
 
