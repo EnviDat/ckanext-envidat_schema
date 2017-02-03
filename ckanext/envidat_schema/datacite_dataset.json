@@ -186,7 +186,7 @@
     {
       "field_name": "tag_string",
       "label": "Subjects",
-      "preset": "tag_string_autocomplete",
+      "preset": "tag_string_upper_autocomplete",
       "form_placeholder": "eg. forest, ice temperature, water"
     },
     {
