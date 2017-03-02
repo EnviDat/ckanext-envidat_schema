@@ -18,3 +18,10 @@
           {% endif %}
         {%- endblock -%}
 
+{% block data_preview %}
+  {% if (res.has_views )%}
+    {{ super() }}
+  {% else %}
+    <br/>
+  {% endif%}
+{% endblock %}
