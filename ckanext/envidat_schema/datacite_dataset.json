@@ -100,7 +100,8 @@
             "label": "Subtitle",
             "form_placeholder":"eg. A secondary title",
             "help_text": "A Secondary title for this dataset",
-            "help_inline": false
+            "help_inline": false,
+            "required": true
           },
           {
             "field_name": "type",
