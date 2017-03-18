@@ -9,7 +9,8 @@
       "field_name": "title",
       "label": "Title",
       "preset": "title",
-      "form_placeholder": "eg. A descriptive title"
+      "form_placeholder": "eg. A descriptive title",
+      "datacite":"titles.title"
     },
     {
       "field_name": "name",
@@ -22,7 +23,8 @@
       "label": "DOI",
       "form_placeholder": "eg. 10.12345/678",
       "help_text": "For a new DOI contact the admin",
-      "help_inline": true
+      "help_inline": true,
+      "datacite":"identifier"
     },
     {
       "field_name": "author",
@@ -32,6 +34,7 @@
       "help_text": "Authors of the dataset",
       "help_inline": false,
       "required": true,
+      "datacite":"creators",
       "subfields": [
           {
             "field_name": "name",
@@ -39,13 +42,15 @@
             "form_placeholder":"eg. John Smith",
             "help_text": "Full first name and family name",
             "help_inline": false,
-            "required": true
+            "required": true,
+            "datacite": "creator.creatorName" 
           },
           {
             "field_name": "affiliation",
             "label": "Affiliation",
             "form_placeholder":"eg. WSL",
-            "required": true
+            "required": true,
+            "datacite": "creator.affiliation"
           },
           {
             "field_name": "email",
@@ -57,12 +62,14 @@
           {
             "field_name": "identifier",
             "label": "Identifier",
-            "form_placeholder":"eg. 0000-0003-0166-248X"
+            "form_placeholder":"eg. 0000-0003-0166-248X",
+            "datacite": "creator.nameIdentifier"
           },
           {
             "field_name": "identifier_scheme",
             "label": "Scheme",
             "preset": "select",
+            "datacite": "creator.nameIdentifier.nameIdentifierScheme",
             "choices": [
               {
                 "value": "orcid",
@@ -94,6 +101,7 @@
       "label": "Subtitles",
       "preset": "composite_repeating",
       "form_blanks": 1,
+      "datacite": "titles",
       "subfields": [
           {
             "field_name": "subtitle",
@@ -101,12 +109,14 @@
             "form_placeholder":"eg. A secondary title",
             "help_text": "A Secondary title for this dataset",
             "help_inline": false,
-            "required": true
+            "required": true,
+            "datacite": "title"
           },
           {
             "field_name": "type",
             "label": "Type",
             "preset": "select",
+            "datacite": "title.titleType",
             "choices": [
               {
                 "value": "alternative_title",
@@ -131,6 +141,7 @@
             "field_name": "language",
             "label": "Language",
             "preset": "select",
+            "datacite": "title.xml:lang",
             "choices": [
               {
                 "value": "en",
@@ -167,14 +178,16 @@
          {
            "field_name": "publisher",
            "label": "Publisher",
-           "form_placeholder": "eg. Institution or Journal"
+           "form_placeholder": "eg. Institution or Journal",
+           "datacite": "publisher"
          },
          {
            "field_name": "publication_year",
            "label": "Year",
            "required": true,
            "form_attrs": { "size":5, "maxlength":4 },
-           "form_placeholder": "YYYY"
+           "form_placeholder": "YYYY",
+           "datacite": "publicationYear"
          }
        ]
     },
@@ -182,24 +195,30 @@
       "field_name": "notes",
       "label": "Description",
       "form_snippet": "markdown.html",
-      "form_placeholder": "eg. Some useful notes about the data"
+      "form_placeholder": "eg. Some useful notes about the data",
+      "datacite": "descriptions.description"
     },
     {
       "field_name": "tag_string",
       "label": "Subjects",
       "preset": "tag_string_upper_autocomplete",
-      "form_placeholder": "eg. forest, ice temperature, water"
+      "form_placeholder": "eg. forest, ice temperature, water",
+      "datacite": "subjects.subject"
     },
     {
       "field_name": "date",
       "label": "Dates",
       "preset": "composite_repeating",
       "form_blanks": 1,
+      "datacite": "dates",
       "subfields": [
          {
            "field_name": "date_type",
            "label": "Type",
            "preset": "select",
+           "datacite": "date.dateType",
+           "required": true,
+           "form_include_blank_choice": false,
            "choices": [
              {
                "value": "accepted",
@@ -247,7 +266,8 @@
            "form_attrs": { "size":12, "maxlength":10 },
            "required": true,
            "help_text": "Pick a date",
-           "help_inline": true
+           "help_inline": true,
+           "datacite": "date"
           },
           {
            "field_name": "end_date",
@@ -274,12 +294,14 @@
     {
       "field_name": "resource_type",
       "label": "Type",
-      "form_placeholder": "Dataset"
+      "form_placeholder": "Dataset",
+      "datacite": "resourceType"
     },
     {
       "field_name": "resource_type_general",
       "label": "General Type",
       "preset": "select",
+      "datacite": "resourceType.resourceTypeGeneral",
       "choices": [
               {
                 "value": "audiovisual",
@@ -342,6 +364,7 @@
     {
       "field_name": "language",
       "label": "Language",
+      "datacite": "language",
       "preset": "select",
       "choices": [
               {
@@ -388,17 +411,20 @@
       "field_name": "maintainer",
       "label": "Contact",
       "preset": "composite",
+      "datacite": "contributors",
       "subfields":[
           {
             "field_name": "name",
             "label": "Name",
             "required": true,
-            "form_placeholder": "Joe Bloggs"
+            "form_placeholder": "Joe Bloggs",
+            "datacite": "contributor.contributorName"
           },
           {
             "field_name": "affiliation",
             "label": "Affiliation",
-            "form_placeholder":"eg. WSL"
+            "form_placeholder":"eg. WSL",
+            "datacite": "contributor.affiliation"
           },
           {
             "field_name": "email",
@@ -408,12 +434,14 @@
           {
             "field_name": "identifier",
             "label": "Identifier",
-            "form_placeholder":"eg. 0000-0003-0166-248X"
+            "form_placeholder":"eg. 0000-0003-0166-248X",
+            "datacite": "contributor.nameIdentifier"
           },
           {
             "field_name": "identifier_scheme",
             "label": "Scheme",
             "preset": "select",
+            "datacite": "contributor.nameIdentifier.nameIdentifierScheme",
             "choices": [
               {
                 "value": "orcid",
