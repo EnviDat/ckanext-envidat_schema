@@ -43,7 +43,7 @@
             "help_text": "Full first name and family name",
             "help_inline": false,
             "required": true,
-            "datacite": "creator.creatorName" 
+            "datacite": "creator.creatorName"
           },
           {
             "field_name": "affiliation",
@@ -283,13 +283,15 @@
       "field_name": "license_id",
       "label": "License",
       "form_snippet": "license.html",
-      "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
+      "help_text": "License definitions and additional information can be found at http://opendefinition.org/",
+      "datacite": "rightsList.rights"
     },
     {
       "field_name": "version",
       "label": "Version",
       "validators": "ignore_missing unicode package_version_validator",
-      "form_placeholder": "1.0"
+      "form_placeholder": "1.0",
+      "datacite": "version"
     },
     {
       "field_name": "resource_type",
@@ -394,7 +396,8 @@
       "label": "Location",
       "form_placeholder": "eg. Switzerland, 45.81802 5.95587,...",
       "help_text": "Free text spatial information",
-      "help_inline": true
+      "help_inline": true,
+      "datacite": "geoLocations.geoLocation.geoLocationPlace"
     },
     {
       "field_name": "spatial",
@@ -473,23 +476,27 @@
     {
       "field_name": "name",
       "label": "Name",
-      "form_placeholder": "eg. January 2011 Gold Prices"
+      "form_placeholder": "eg. January 2011 Gold Prices",
+      "datacite":"titles.title"
     },
     {
       "field_name": "description",
       "label": "Description",
       "form_snippet": "markdown.html",
-      "form_placeholder": "Some useful notes about the data"
+      "form_placeholder": "Some useful notes about the data",
+      "datacite": "descriptions.description"
     },
     {
       "field_name": "format",
       "label": "Format",
-      "preset": "resource_format_autocomplete"
+      "preset": "resource_format_autocomplete",
+      "datacite": "formats.format"
     },
     {
       "field_name": "doi",
       "label": "DOI",
-      "form_placeholder": "eg. 10.12345/678"
+      "form_placeholder": "eg. 10.12345/678",
+      "datacite":"identifier"
     },
     {
       "field_name": "restricted",
