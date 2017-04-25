@@ -218,7 +218,7 @@
            "preset": "select",
            "datacite": "date.dateType",
            "required": true,
-           "form_include_blank_choice": false,
+           "form_include_blank_choice": true,
            "choices": [
              {
                "value": "accepted",
