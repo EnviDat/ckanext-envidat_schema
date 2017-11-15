@@ -15,8 +15,10 @@ class Envidat_SchemaPlugin(plugins.SingletonPlugin):
 
     # ITemplateHelpers
     def get_helpers(self):
-	return { 'envidat_schema_get_citation': helpers.envidat_schema_get_citation }
+	return { 'envidat_schema_get_citation': helpers.envidat_schema_get_citation,
+                 'envidat_schema_get_datamanager_choices': helpers.envidat_schema_get_datamanager_choices,
+                 'envidat_schema_get_datamanager_user': helpers.envidat_schema_get_datamanager_user }
 
     # IValidators
     def get_validators(self):
-        return { "envidat_string_uppercase": validation.envidat_string_uppercase }
+        return { 'envidat_string_uppercase': validation.envidat_string_uppercase }

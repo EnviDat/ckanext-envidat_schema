@@ -75,3 +75,27 @@ def _safe_str(obj):
     except UnicodeEncodeError:
         # obj is unicode
         return unicode(obj)
+
+def envidat_schema_get_datamanager_choices(organization_dict):
+    '''
+    Gets the admins of the organization as choices
+    '''
+    choices = []
+    for user in organization_dict.get('users',[]):
+        username = user.get('name', '')
+        fullname = user.get('display_name', user.get('fullname', username))
+        capacity = user.get('capacity', '')
+        if fullname and (capacity=='admin'):
+            choices += [ { "value": username, "label": fullname}]
+    return choices
+ 
+def envidat_schema_get_datamanager_user(username, organization_dict):
+    '''
+    Gets the user information of the data manager
+    '''
+    datamanager_user = {'name': username, 'fullname': username}
+    for user in organization_dict.get('users',[]):
+        if  (user.get('name', '') == username):
+            datamanager_user = user
+    return datamanager_user
+

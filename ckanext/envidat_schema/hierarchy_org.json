@@ -49,6 +49,13 @@
       "display_snippet": null,
       "form_snippet": "org_hierarchy.html",
       "validators": "ignore_missing"
+    },
+    {
+      "field_name": "datamanager",
+      "label": "Data Manager",
+      "preset": "envidat_datamanager_select",
+      "form_include_blank_choice": false,
+      "required": true
     }
   ]
 }

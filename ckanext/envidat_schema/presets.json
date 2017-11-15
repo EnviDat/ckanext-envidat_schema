@@ -21,6 +21,15 @@
           "data-module-source": "/api/2/util/tag/autocomplete?incomplete=?"
         }
       }
+    },
+    {
+      "preset_name": "envidat_datamanager_select",
+      "values": {
+        "form_snippet": "envidat_datamanager_select.html",
+        "display_snippet": "envidat_datamanager_display.html",
+        "validators": "scheming_required",
+        "sorted_choices": true
+      }
     }
   ]
 }
