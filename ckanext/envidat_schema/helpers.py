@@ -88,14 +88,14 @@ def envidat_schema_get_datamanager_choices(organization_dict):
         if fullname and (capacity=='admin'):
             choices += [ { "value": username, "label": fullname}]
     return choices
- 
+
 def envidat_schema_get_datamanager_user(username, organization_dict):
     '''
     Gets the user information of the data manager
     '''
-    datamanager_user = {'name': username, 'fullname': username}
+    datamanager_user = {}
     for user in organization_dict.get('users',[]):
-        if  (user.get('name', '') == username):
+        if  (user.get('name', '') == username)  and (user.get('capacity', '') == 'admin'):
             datamanager_user = user
     return datamanager_user
 
