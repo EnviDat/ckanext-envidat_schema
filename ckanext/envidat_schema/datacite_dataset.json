@@ -297,14 +297,21 @@
       "field_name": "resource_type",
       "label": "Type",
       "form_placeholder": "Dataset",
-      "datacite": "resourceType"
+      "datacite": "resourceType",
+      "form_snippet":"envidat_text_default.html",
+      "default_value": "Dataset"
     },
     {
       "field_name": "resource_type_general",
       "label": "General Type",
-      "preset": "select",
+      "preset": "envidat_select",
+      "form_include_blank_choice":false,
       "datacite": "resourceType.resourceTypeGeneral",
       "choices": [
+              {
+                "value": "dataset",
+                "label": "Dataset"
+              },
               {
                 "value": "audiovisual",
                 "label": "Audiovisual"
@@ -312,10 +319,6 @@
               {
                 "value": "collection",
                 "label": "Collection"
-              },
-              {
-                "value": "dataset",
-                "label": "Dataset"
               },
               {
                 "value": "event",
@@ -367,7 +370,8 @@
       "field_name": "language",
       "label": "Language",
       "datacite": "language",
-      "preset": "select",
+      "form_include_blank_choice":false,
+      "preset": "envidat_select",
       "choices": [
               {
                 "value": "en",
@@ -394,20 +398,23 @@
     {
       "field_name": "spatial_info",
       "label": "Location",
-      "form_placeholder": "eg. Switzerland, 45.81802 5.95587,...",
+      "form_snippet":"envidat_text_default.html",
+      "default_value": "Switzerland",
+      "form_placeholder": "Switzerland",
       "help_text": "Free text spatial information",
       "help_inline": true,
       "datacite": "geoLocations.geoLocation.geoLocationPlace"
     },
     {
       "field_name": "spatial",
-      "default_value": "{}",
+      "default_value": "{\"type\": \"Polygon\", \"coordinates\": [[[5.95587, 45.81802],[5.95587, 47.80838],[10.49203, 47.80838],[10.49203, 45.81802],[5.95587, 45.81802]]]}",
+      "form_snippet":"envidat_text_default.html",
       "display_snippet": null,
       "modal_text": "spatial_help",
-      "required": false,
+      "required": true,
       "label": "Spatial Extent",
-      "help_text": "GeoJSON format required",
-      "help_inline": true,
+      "help_text": "GeoJSON format, ex: {\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}",
+      "help_inline": false,
       "form_placeholder": "{\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}"
     },
     {

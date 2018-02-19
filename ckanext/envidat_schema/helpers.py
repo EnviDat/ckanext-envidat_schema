@@ -5,6 +5,41 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
+def envidat_schema_set_default(values, default_value):
+    ## Only set default value if current value is empty string or None
+    ## or a list containing only '' or None.
+    if isinstance(values, basestring) or values is None:
+        if values not in ['', None]:
+            return values
+        islist = False
+    elif isinstance(values, list):
+        if not all([x in ['', None] for x in values]):
+            return values
+        islist = True
+    else:
+        return values
+
+    # special default value resulting in "Full Name <email>"
+    #if default_value == "context_fullname_email":
+    #    val = u'{} <{}>'.format(toolkit.c.userobj.fullname,
+    #                           toolkit.c.userobj.email)
+
+    ## insert elif clauses for other defaults
+
+    #else:
+    #    val = default_value
+
+    val = default_value
+
+    # deal with list/string - duality
+    if islist:
+        values[0] = val
+    else:
+        values = val
+
+    return values
+
 def envidat_schema_get_citation(package_data_dict):
     '''
     Combines multiple datacite metadata into a

@@ -1,8 +1,12 @@
 {% import 'macros/form.html' as form %}
-{# same as default but no blank without making it mandatory #}
+
+{# same as scheming default select but removing blank if form_restrict_choices_to
+   also for non mandatory fields #}
+
 {%- set options=[] -%}
 {%- set form_restrict_choices_to=field.get('form_restrict_choices_to') -%}
-{%- if field.get('form_include_blank_choice', true) -%}
+{%- if (not h.scheming_field_required(field)) and
+    (field.get('form_include_blank_choice', true)) -%}
   {%- do options.append({'value': '', 'text': ''}) -%}
 {%- endif -%}
 {%- for c in h.scheming_field_choices(field) -%}
@@ -24,7 +28,7 @@
     selected=data[field.field_name],
     error=errors[field.field_name],
     classes=['control-medium'],
-    attrs=field.form_attrs if 'form_attrs' in field else {},
+    attrs=field.form_attrs if 'form_attrs' in field else {"class": "form-control"},
     is_required=h.scheming_field_required(field)
     )
 %}
