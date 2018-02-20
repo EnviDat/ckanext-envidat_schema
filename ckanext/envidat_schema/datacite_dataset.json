@@ -21,8 +21,9 @@
     {
       "field_name": "doi",
       "label": "DOI",
+      "form_snippet":"envidat_text_default.html",
       "form_placeholder": "eg. 10.12345/678",
-      "help_text": "For a new DOI contact the admin",
+      "help_text": "For a new DOI contact envidat@wsl.ch",
       "help_inline": true,
       "datacite":"identifier"
     },
@@ -413,8 +414,8 @@
       "modal_text": "spatial_help",
       "required": true,
       "label": "Spatial Extent",
-      "help_text": "GeoJSON format, ex: {\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}",
-      "help_inline": false,
+      "help_text": "Select a geometry at http://geojson.io/#map=8/47.246/8.113",
+      "help_inline": true,
       "form_placeholder": "{\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}"
     },
     {

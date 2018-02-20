@@ -18,7 +18,8 @@ class Envidat_SchemaPlugin(plugins.SingletonPlugin):
 	return { 'envidat_schema_get_citation': helpers.envidat_schema_get_citation,
                  'envidat_schema_get_datamanager_choices': helpers.envidat_schema_get_datamanager_choices,
                  'envidat_schema_get_datamanager_user': helpers.envidat_schema_get_datamanager_user,
-                 'envidat_schema_set_default': helpers.envidat_schema_set_default }
+                 'envidat_schema_set_default': helpers.envidat_schema_set_default,
+                 'envidat_schema_get_markup': helpers.envidat_schema_get_markup }
 
     # IValidators
     def get_validators(self):

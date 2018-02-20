@@ -55,7 +55,7 @@
       "label": "Data Manager",
       "preset": "envidat_datamanager_select",
       "form_include_blank_choice": false,
-      "required": true
+      "required": false
     }
   ]
 }

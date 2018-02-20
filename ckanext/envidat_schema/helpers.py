@@ -5,6 +5,20 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+def envidat_schema_get_markup(text):
+    markup_text = []
+
+    for token in text.split(' '):
+        if token.find('@')>=0:
+            markup_text += ['<b><a href="mailto:' + token + '" target="_top">' + token + '</a></b>']
+        elif token.find('http://')==0 or token.find('https://')==0:
+            start = token.find('//') + len('//')
+            end = token.find('/', start)
+            tag = token[start:end]
+            markup_text += ['<b><a href="' + token + '">' + tag + '</a></b>']
+        else:
+            markup_text += [token]
+    return ' '.join(markup_text)
 
 def envidat_schema_set_default(values, default_value):
     ## Only set default value if current value is empty string or None
