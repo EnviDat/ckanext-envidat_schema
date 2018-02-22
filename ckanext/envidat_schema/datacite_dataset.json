@@ -197,13 +197,17 @@
       "label": "Description",
       "form_snippet": "markdown.html",
       "form_placeholder": "eg. Some useful notes about the data",
+      "required": true,
       "datacite": "descriptions.description"
     },
     {
       "field_name": "tag_string",
-      "label": "Subjects",
+      "label": "Keywords",
       "preset": "tag_string_upper_autocomplete",
-      "form_placeholder": "eg. forest, ice temperature, water",
+      "required": true,
+      "help_text": "At least 5 keywords required",
+      "help_inline": true,
+      "form_placeholder": "eg. FOREST, ICE TEMPERATURE, WATER",
       "datacite": "subjects.subject"
     },
     {
@@ -283,7 +287,7 @@
     {
       "field_name": "license_id",
       "label": "License",
-      "form_snippet": "license.html",
+      "form_snippet": "envidat_license.html",
       "help_text": "License definitions and additional information can be found at http://opendefinition.org/",
       "datacite": "rightsList.rights"
     },
@@ -414,7 +418,7 @@
       "modal_text": "spatial_help",
       "required": true,
       "label": "Spatial Extent",
-      "help_text": "Select a geometry at http://geojson.io/#map=8/47.246/8.113",
+      "help_text": "Draw and select the geometry at http://geojson.io/#map=8/47.246/8.113",
       "help_inline": true,
       "form_placeholder": "{\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}"
     },
@@ -422,6 +426,7 @@
       "field_name": "maintainer",
       "label": "Contact",
       "preset": "composite",
+      "required": true,
       "datacite": "contributors",
       "subfields":[
           {
@@ -432,15 +437,16 @@
             "datacite": "contributor.contributorName"
           },
           {
+            "field_name": "email",
+            "label": "Email",
+            "required": true,
+            "form_placeholder":"eg. john@wsl.ch"
+          },
+          {
             "field_name": "affiliation",
             "label": "Affiliation",
             "form_placeholder":"eg. WSL",
             "datacite": "contributor.affiliation"
-          },
-          {
-            "field_name": "email",
-            "label": "Email",
-            "form_placeholder":"eg. john@wsl.ch"
           },
           {
             "field_name": "identifier",
@@ -451,6 +457,7 @@
           {
             "field_name": "identifier_scheme",
             "label": "Scheme",
+            "required": false,
             "preset": "select",
             "datacite": "contributor.nameIdentifier.nameIdentifierScheme",
             "choices": [
