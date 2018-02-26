@@ -285,6 +285,65 @@
       ]
     },
     {
+      "field_name": "maintainer",
+      "label": "Contact Person",
+      "preset": "composite",
+      "required": true,
+      "datacite": "contributors",
+      "subfields":[
+          {
+            "field_name": "name",
+            "label": "Name",
+            "required": true,
+            "form_placeholder": "Joe Bloggs",
+            "datacite": "contributor.contributorName"
+          },
+          {
+            "field_name": "email",
+            "label": "Email",
+            "required": true,
+            "form_placeholder":"eg. john@wsl.ch"
+          },
+          {
+            "field_name": "affiliation",
+            "label": "Affiliation",
+            "form_placeholder":"eg. WSL",
+            "datacite": "contributor.affiliation"
+          },
+          {
+            "field_name": "identifier",
+            "label": "Identifier",
+            "form_placeholder":"eg. 0000-0003-0166-248X",
+            "datacite": "contributor.nameIdentifier"
+          },
+          {
+            "field_name": "identifier_scheme",
+            "label": "Scheme",
+            "required": false,
+            "preset": "select",
+            "datacite": "contributor.nameIdentifier.nameIdentifierScheme",
+            "choices": [
+              {
+                "value": "orcid",
+                "label": "ORCID"
+              },
+              {
+                "value": "isni",
+                "label": "ISNI"
+              },
+              {
+                "value": "rid",
+                "label": "ResearcherID"
+              },
+              {
+                "value": "rgate",
+                "label": "ResearchGate"
+              }
+           ]
+         }
+      ]
+    },
+    {
       "field_name": "license_id",
       "label": "License",
       "form_snippet": "envidat_license.html",
@@ -421,65 +480,6 @@
       "help_text": "Draw and select the geometry at http://geojson.io/#map=8/47.246/8.113",
       "help_inline": true,
       "form_placeholder": "{\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}"
-    },
-    {
-      "field_name": "maintainer",
-      "label": "Contact",
-      "preset": "composite",
-      "required": true,
-      "datacite": "contributors",
-      "subfields":[
-          {
-            "field_name": "name",
-            "label": "Name",
-            "required": true,
-            "form_placeholder": "Joe Bloggs",
-            "datacite": "contributor.contributorName"
-          },
-          {
-            "field_name": "email",
-            "label": "Email",
-            "required": true,
-            "form_placeholder":"eg. john@wsl.ch"
-          },
-          {
-            "field_name": "affiliation",
-            "label": "Affiliation",
-            "form_placeholder":"eg. WSL",
-            "datacite": "contributor.affiliation"
-          },
-          {
-            "field_name": "identifier",
-            "label": "Identifier",
-            "form_placeholder":"eg. 0000-0003-0166-248X",
-            "datacite": "contributor.nameIdentifier"
-          },
-          {
-            "field_name": "identifier_scheme",
-            "label": "Scheme",
-            "required": false,
-            "preset": "select",
-            "datacite": "contributor.nameIdentifier.nameIdentifierScheme",
-            "choices": [
-              {
-                "value": "orcid",
-                "label": "ORCID"
-              },
-              {
-                "value": "isni",
-                "label": "ISNI"
-              },
-              {
-                "value": "rid",
-                "label": "ResearcherID"
-              },
-              {
-                "value": "rgate",
-                "label": "ResearchGate"
-              }
-           ]
-         }
-      ]
     }
   ],
   "resource_fields": [
