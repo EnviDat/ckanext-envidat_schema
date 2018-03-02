@@ -472,12 +472,12 @@
     {
       "field_name": "spatial",
       "default_value": "{\"type\": \"Polygon\", \"coordinates\": [[[5.95587, 45.81802],[5.95587, 47.80838],[10.49203, 47.80838],[10.49203, 45.81802],[5.95587, 45.81802]]]}",
-      "form_snippet":"envidat_text_default.html",
+      "form_snippet":"envidat_map.html",
       "display_snippet": null,
       "modal_text": "spatial_help",
       "required": true,
       "label": "Spatial Extent",
-      "help_text": "Draw and select the geometry at http://geojson.io/#map=8/47.246/8.113",
+      "help_text": "Draw the spatial extent in the map or paste a valid GeoJSON geometry",
       "help_inline": true,
       "form_placeholder": "{\"type\": \"Point\", \"coordinates\": [8.6124600, 47.4031100]}"
     }
